@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="wrapper_test_controller">
+ <apex:pageblock >
+        <apex:pageBlockSection columns="2">
+      
+         <apex:pageblocktable value="{!accountwrapperret}" var="con">
+        
+          <apex:column value="{!con.object_contact_1.name}" />
+    
+          </apex:pageblocktable>
+        
+          <apex:pageblocktable value="{!contactwrapperret}" var="opp">
+       
+          <apex:column value="{!opp.object_opportunity_2.name}" />
+         
+          </apex:pageblocktable>
+         
+         
+          </apex:pageblocksection>
+          </apex:pageblock>
+     
+  </apex:page>

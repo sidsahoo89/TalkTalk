@@ -1,0 +1,43 @@
+<apex:page >
+ #share-buttons {
+        var shareB = new Object
+        shareB.title = event_title + ', ' + event_date + ' #SkyTickets'
+        var url_esc = encodeURIComponent(seats_page_url)
+         var vanila_url = url_esc + '?DCMP=snt-ST_REPLACEME-na-' + seats_page_omni_title
+
+         shareB.fb = new Object
+         shareB.fb.url = vanila_url.replace(/REPLACEME/, 'FB')
+
+         shareB.tw = new Object
+         shareB.tw.url = vanila_url.replace(/REPLACEME/, 'TW')
+         shareB.tw.text = encodeURI('Looking at tickets for ' + event_title + ' on ' + event_date + '.')
+
+         shareB.gplus = new Object
+         shareB.gplus.url = vanila_url.replace(/REPLACEME/, 'Gplus')
+
+         shareB.email = new Object
+         shareB.email.text = 'Looking at tickets for ' + event_title + ' on ' + event_date + '. Anyone else want to come?' 
+         var email_url = vanila_url.replace(/REPLACEME/, 'email')
+         shareB.email.url = email_url.replace(/snt/, 'ilc')
+
+     <a> 
+        a.share-button(
+          href='https://www.facebook.com/sharer/sharer.php?u=#{shareB.fb.url}', 
+          onclick="sky.tracking.shareButton(this,'FB');",
+          id='FB-#{seats_page_omni_title}',
+          target='_blank'
+          )
+          i.share-button-fb
+
+       </a> 
+
+        a.share-button(
+          href='https://plus.google.com/share?url=#{shareB.gplus.url}', 
+          onclick="sky.tracking.shareButton(this,'Gplus');",
+          id='GPLUS-#{seats_page_omni_title}',
+          target='_blank'
+          )
+          i.share-button-gplus
+
+       
+</apex:page>

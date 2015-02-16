@@ -1,0 +1,6 @@
+<apex:page showHeader="false" sidebar="false" >
+<apex:form id="myForm">
+ <c:LoaderComp />
+<apex:commandButton action="{!save}" value="Ajax Button" status="loadStatus" rerender="myForm"/>
+</apex:form>
+</apex:page>

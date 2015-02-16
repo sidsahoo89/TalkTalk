@@ -1,0 +1,6 @@
+<apex:page standardController="Account" >
+  <!-- Begin Default Content REMOVE THIS -->
+  Hello {!$User.FirstName}!
+  <p>Welcome to {!Account.Name} account </p>
+          <!-- End Default Content REMOVE THIS -->
+</apex:page>
